@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Prueba de Galvan</string>
+
+
+    <!-- SplasActivity -->
+    <string name="POWEREDBY">Aplicacion Desarrollada Por Luis Galvan</string>
+    <string name="denied_permiss">Permisos denegados la aplicacion se cerrara en</string>
+    <string name="permiss">La aplicación no puede funcionar correctamente sin todos los permisos necesarios.</string>
+
+</resources>
