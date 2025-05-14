@@ -1,12 +1,14 @@
 package com.galvan.ubicationtest.Activity.MainActivity
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.lifecycleScope
 import com.ade.accessControl.manager.PermissionsManager
 import com.galvan.ubicationtest.Activity.SplashActivity.SplashActivity
@@ -44,14 +46,18 @@ class MainActivity : AppCompatActivity() {
             finish()
             return
         }
-        enableEdgeToEdge()
+        //enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+//            insets
+//        }
+        window.statusBarColor = Color.parseColor("#2962FF")
+        val windowInsetsController = WindowInsetsControllerCompat(window, window.decorView)
+        window.statusBarColor = Color.WHITE
+        windowInsetsController.isAppearanceLightStatusBars = false
     }
 
 
