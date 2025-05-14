@@ -1,7 +1,7 @@
 package com.galvan.ubicationtest.Data.GlobalConfigurations;
 
 public class GlobalConfigurations {
-
+    //Variables estaticas
 
     ///ManagerData
     public static String KEY_USER = "shearedData";

@@ -42,6 +42,10 @@ android {
 
 dependencies {
 
+    // Lifecycle (para lifecycleScope y viewModelScope)
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+
     /// Google Mobile Services
     implementation("com.google.android.gms:play-services-location:21.0.1")
 

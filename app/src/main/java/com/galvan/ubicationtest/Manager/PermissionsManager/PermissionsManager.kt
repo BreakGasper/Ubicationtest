@@ -19,6 +19,7 @@ import androidx.lifecycle.MutableLiveData
 import com.galvan.ubicationtest.Activity.MainActivity.MainActivity
 import com.galvan.ubicationtest.R
 
+///Clase para manejar Permisos del Sistema
 class PermissionsManager(private val activity: Activity) {
 
     private val _alert = MutableLiveData<Boolean>()
@@ -67,7 +68,7 @@ class PermissionsManager(private val activity: Activity) {
     }
 
 
-    // Solicita permisos si es necesario
+    // Solicita permisos
     fun checkAndRequestPermissions() {
 
 
@@ -96,8 +97,6 @@ class PermissionsManager(private val activity: Activity) {
             emptyList()
         }
 
-
-
         if (permissionsNeeded.isNotEmpty() || bluetoothPermissionsNeeded.isNotEmpty() || storageManager.isNotEmpty()) {
             ActivityCompat.requestPermissions(
                 activity,
@@ -120,7 +119,7 @@ class PermissionsManager(private val activity: Activity) {
                 }
             }
 
-
+            ///Manejar Respuesta del Usario
             if (deniedPermissions.isNotEmpty() && !Environment.isExternalStorageManager()) {
                 _alert.postValue(true)
                 val alerta = AlertDialog.Builder(activity)

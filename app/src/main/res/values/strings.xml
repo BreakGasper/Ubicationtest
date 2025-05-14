@@ -7,4 +7,16 @@
     <string name="denied_permiss">Permisos denegados la aplicacion se cerrara en</string>
     <string name="permiss">La aplicación no puede funcionar correctamente sin todos los permisos necesarios.</string>
 
+
+
+    <!-- MainActivity -->
+    <string name="Location1">Ubicacion No.1</string>
+    <string name="Location2">Ubicacion No.2</string>
+    <string name="latitud_input">Latitud</string>
+    <string name="longitud_input">Longitud</string>
+    <string name="maps_intent">Ir a Maps</string>
+    <string name="distance">Calcular Distancia</string>
+    <string name="validationDistance">No se pudo calcular la distancia</string>
+    <string name="validationDistanceresult">Esta mas cerca el Punto\n</string>
+
 </resources>

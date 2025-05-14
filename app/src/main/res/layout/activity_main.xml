@@ -27,8 +27,9 @@
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_margin="12dp"
                 android:elevation="6dp"
                 app:cardCornerRadius="28dp">
@@ -36,7 +37,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="12dp"
+                    android:padding="18dp"
                     android:background="@color/white"
                     android:orientation="vertical">
 
@@ -45,22 +46,63 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:textColor="@color/black"
-                        android:text="hola mundo"/>
+                        android:text="@string/Location1"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/latitud_input"
+                        android:textColorHint="@color/black"
+                        android:padding="8dp">
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/acetLatitud"
+                            android:background="@drawable/bg_redondeado"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:inputType="numberDecimal|numberSigned" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/longitud_input"
+                        android:textColorHint="@color/black"
+                        android:padding="8dp">
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/acetLongitud"
+                            android:background="@drawable/bg_redondeado"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:inputType="numberDecimal|numberSigned" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnMaps1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:visibility="gone"
+                        android:textColor="@color/white"
+                        android:text="@string/maps_intent"
+                        android:backgroundTint="#2962FF"/>
 
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:elevation="6dp"
                 app:cardCornerRadius="28dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="12dp"
+                    android:padding="18dp"
                     android:background="@color/white"
                     android:orientation="vertical">
 
@@ -69,7 +111,48 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:textColor="@color/black"
-                        android:text="hola mundo"/>
+                        android:text="@string/Location2"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/latitud_input"
+                        android:textColorHint="@color/black"
+                        android:padding="8dp">
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/acetLatitud2"
+                            android:background="@drawable/bg_redondeado"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:inputType="numberDecimal|numberSigned" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/longitud_input"
+                        android:textColorHint="@color/black"
+                        android:padding="8dp">
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/acetLongitud2"
+                            android:background="@drawable/bg_redondeado"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:inputType="numberDecimal|numberSigned" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnMaps2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:visibility="gone"
+                        android:textColor="@color/white"
+                        android:text="@string/maps_intent"
+                        android:backgroundTint="#2962FF"/>
+
 
 
                 </LinearLayout>
@@ -82,7 +165,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
             android:elevation="6dp"
             app:cardCornerRadius="28dp">
 
@@ -94,11 +179,46 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/currentLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:text="hola mundo"/>
+
+                <TextView
+                    android:id="@+id/resultView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:text="hola mundo"/>
+
+                <TextView
+                    android:id="@+id/errorView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:layout_margin="8dp"
+                    android:textColor="#FF0303"
+                    android:text="hola mundo"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCalculate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginEnd="45dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/distance"
+                    android:textColor="@color/white"
+                    android:backgroundTint="#2962FF"/>
+
+
 
 
             </LinearLayout>

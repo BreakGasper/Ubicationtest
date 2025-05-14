@@ -22,18 +22,22 @@ import com.google.android.gms.location.Priority
 import javax.inject.Inject
 import javax.inject.Singleton
 
+// Marca esta clase como Singleton: solo existirá una instancia en toda la app
 @Singleton
-
 class LocationRepository @Inject constructor(
+    // Inyecta el contexto de aplicación (requerido para acceder a servicios del sistema)
     @ApplicationContext private val context: Context
 ) {
+    // Cliente de ubicación de Google Play Services
     private val fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(context)
 
+    // Flujo interno mutable que guarda la última ubicación conocida
     private val _locationFlow = MutableStateFlow<Location?>(null)
     val locationFlow: StateFlow<Location?> = _locationFlow
 
     @RequiresPermission(allOf = [Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION])
-    fun startLocationUpdates() {
+    suspend fun startLocationUpdates() {
+        // Solicita la ubicación actual con alta precisión
         fusedLocationProviderClient.getCurrentLocation(
             Priority.PRIORITY_HIGH_ACCURACY,
             null
